@@ -26,6 +26,9 @@ function isNodeInRoot(node, root) {
 }
 
 module.exports = {
+  propTypes: {
+    onDocumentClick: React.PropTypes.func.isRequired
+  },
 
   handleDocumentKeyUp: function(e) {
     if (e.keyCode === 27) {
@@ -43,20 +46,12 @@ module.exports = {
   },
 
   componentDidMount: function() {
-    if (this.onDocumentClick) {
-      document.addEventListener('click', this.handleDocumentClick, false);
-      document.addEventListener('keyup', this.handleDocumentKeyUp, false);
-    } else if (console && console.warn) {
-      console.warn('Please provide the function `onDocumentClick` to your Component');
-    }
+    document.addEventListener('click', this.handleDocumentClick, false);
+    document.addEventListener('keyup', this.handleDocumentKeyUp, false);
   },
 
   componentWillUnmount: function() {
-    if (this.onDocumentClick) {
-      document.removeEventListener('click', this.handleDocumentClick, false);
-      document.removeEventListener('keyup', this.handleDocumentKeyUp, false);
-    } else if (console && console.warn) {
-      console.warn('Please provide the function `onDocumentClick` to your Component');
-    }
+    document.removeEventListener('click', this.handleDocumentClick, false);
+    document.removeEventListener('keyup', this.handleDocumentKeyUp, false);
   }
 };
