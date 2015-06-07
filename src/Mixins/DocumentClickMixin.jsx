@@ -42,6 +42,10 @@ module.exports = {
     this.onDocumentClick();
   },
 
+  /**
+  * Why here is used such custom checking instead of propTypes, read here
+  * https://github.com/BoomTownROI/boomstrap-react/pull/15#issuecomment-109788215
+  */
   componentDidMount: function() {
     if (this.onDocumentClick) {
       document.addEventListener('click', this.handleDocumentClick, false);
