@@ -671,6 +671,62 @@
       }
     }
   },
+  "dist/Components/LeadCategoryDropdown.js": {
+    "description": "",
+    "props": {
+      "category": {
+        "type": {
+          "name": "number"
+        },
+        "required": true,
+        "description": "Lead Category Type"
+      },
+      "categoryProps": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Object of properties to pass to Lead Category rendered.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "onSelectCategory": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Function to trigger when a category has been selected.",
+        "defaultValue": {
+          "value": "function onSelectCategory() {}",
+          "computed": false
+        }
+      },
+      "isByType": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "Indicates whether or not to use LeadCategoryByType",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "container": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Optional container to pass for Dropdown overlay to be added to.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
   "dist/Components/LeadType.js": {
     "description": "",
     "props": {
@@ -939,6 +995,73 @@
         },
         "required": false,
         "description": "Actual Nav Links to render (expected in <li><a /></li> format)\nThis property is provided by React children"
+      }
+    }
+  },
+  "dist/Components/OverlayBox.js": {
+    "description": "",
+    "props": {
+      "positionTop": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Passed by Overlay component for placement on the page (y-axis)",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "positionLeft": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Passed by Overlay component for placement on the page (x-axis)",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "zIndex": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "Optional z index for when a dropdown menu needs to be on top (think modals).",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Optional styles to pass to OverlayBox.",
+        "defaultValue": {
+          "value": "{}",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Optional class to add to OverlayBox."
+      },
+      "children": {
+        "type": {
+          "name": "node"
+        },
+        "required": false,
+        "description": "What is actually rendered within the OverlayBox",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
       }
     }
   },
