@@ -12,7 +12,9 @@ module.exports = React.createClass({
 
   propTypes: {
     type:       React.PropTypes.string,
-    label:      React.PropTypes.string.isRequired,
+    label:      React.PropTypes.string,
+    text:       React.PropTypes.string.isRequired,
+    labelClass: React.PropTypes.string,
     showClose:  React.PropTypes.bool,
     closeClass: React.PropTypes.string,
     onClose:    React.PropTypes.func,
@@ -25,7 +27,8 @@ module.exports = React.createClass({
       onClose:    function() {},
       closeClass: '',
       showClose:  true,
-      className:  ''
+      className:  '',
+      labelClass: ''
     };
   },
 
@@ -39,9 +42,17 @@ module.exports = React.createClass({
       );
     }
 
+    let label = null;
+    if (this.props.label) {
+      label = (
+        <span className={this.props.labelClass}>{this.props.label} </span>
+      );
+    }
+
     return (
       <span className={markerClass}>
-        <span>{this.props.label} </span>
+        {label}
+        <span>{this.props.text} </span>
         {close}
       </span>
     );
